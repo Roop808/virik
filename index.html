@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <style>
+        /* Styling for the button */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Styling for the password input */
+        input[type="password"] {
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            margin-right: 10px;
+        }
+
+        input[type="password"]:focus {
+            border-color: #45a049;
+        }
+
+        /* Layout for input and button */
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Center content */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Styling for the error message */
+        #error-message {
+            color: red;
+            margin-top: 8px;
+            font-size: 26px;
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-container">
+        <input type="password" id="password" placeholder="Enter password" />
+        <button onclick="openGame()">Open</button>
+    </div>
+    <div id="error-message">keep guessing the password u bum its wrong buddi rmunni owns u cuz wallah</div>
+
+    <script>
+        function openGame() {
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("error-message");
+            if (password === "banchod") {
+                errorMessage.style.display = "none"; // Hide the error message if the password is correct
+                var win = window.open();
+                var url = "https://gurman-play.netlify.app/";
+                var iframe = win.document.createElement('iframe');
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.border = "none";
+                iframe.src = url;
+                win.document.body.appendChild(iframe);
+            } else {
+                errorMessage.style.display = "block"; // Show the error message if the password is wrong
+            }
+        }
+    </script>
+</body>
+
+</html>
